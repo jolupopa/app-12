@@ -79,7 +79,7 @@ services:
         networks:
             - sail
 
-     phpmyadmin:
+    phpmyadmin:
         depends_on:
             - mysql
         image: 'phpmyadmin:5.2.1-apache'
