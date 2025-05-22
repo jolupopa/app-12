@@ -1,5 +1,6 @@
 import { type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
+import { Button } from '@/components/ui/button';
 
 export default function Welcome() {
     const { auth } = usePage<SharedData>().props;
@@ -45,9 +46,33 @@ export default function Welcome() {
                           
                         </div>
                         <div className="relative -mb-px aspect-[335/376] w-full shrink-0 overflow-hidden rounded-t-lg bg-[#fff2f2] lg:mb-0 lg:-ml-px lg:aspect-auto lg:w-[438px] lg:rounded-t-none lg:rounded-r-lg dark:bg-[#1D0002]">
-                           
-                            <div className="absolute inset-0 rounded-t-lg shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] lg:rounded-t-none lg:rounded-r-lg dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d]" />
-                            Welcome
+                             <div className="p-6">
+                                  {/* Este h1 usará 'Montserrat Variable' porque aplicamos 'font-heading' */}
+                                <h1 className="text-4xl font-heading font-bold text-gray-900 dark:text-gray-50 mb-6">
+                                Título de la Sección con Montserrat
+                                </h1>
+
+                                  {/* Este párrafo usará 'Inter Variable' porque hereda 'font-sans' del layout */}
+                                <p className="mb-4 text-lg text-gray-700 dark:text-gray-300">
+                                Este es un texto normal con Inter.
+                                </p>
+
+                                 {/* El botón de Shadcn UI usará 'Inter Variable' por defecto (font-sans) */}
+                                <Button className="font-sans">Botón con Inter</Button>
+
+                                   {/* Si tienes código o algo monoespaciado */}
+                                <pre className="mt-4 bg-gray-100 dark:bg-gray-800 p-2 rounded-lg font-mono text-sm">
+                                <code>
+                                    // Esto es código con una fuente monoespaciada
+                                    const data = 'ejemplo';
+                                </code>
+                                </pre>
+
+
+
+
+                             </div>
+                             
                         </div>
                     </main>
                 </div>

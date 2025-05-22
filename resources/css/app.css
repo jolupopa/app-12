@@ -5,11 +5,84 @@
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 
+/* --- Reglas @font-face para Inter --- */
+@font-face {
+    font-family: 'Inter Variable'; /* Nombre de la fuente que usarás en CSS */
+    font-weight: 100 900; /* Rango de pesos que soporta la fuente variable */
+    font-style: normal;
+    font-display: swap; /* Muestra la fuente de respaldo mientras carga */
+    src: url('/fonts/inter-variable.woff2') format('woff2-variations'); /* Ruta a tu archivo WOFF2 */
+    font-optical-sizing: auto; /* Permite al navegador ajustar la fuente según el tamaño */
+  }
+
+@font-face {
+font-family: 'Inter Variable'; /* Usa el mismo nombre de familia */
+font-weight: 100 900;
+font-style: italic; /* Especifica que es la versión itálica */
+font-display: swap;
+src: url('/fonts/inter-italic-variable.woff2') format('woff2-variations');
+font-optical-sizing: auto;
+}
+  /* --- Fin de reglas @font-face --- */
+
+  /* --- Reglas @font-face para Montserrat --- */
+@font-face {
+    font-family: 'Montserrat Variable'; /* Nuevo nombre de familia para Montserrat */
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/montserrat-variable.woff2') format('woff2-variations');
+  }
+@font-face {
+font-family: 'Montserrat Variable';
+font-weight: 100 900;
+font-style: italic;
+font-display: swap;
+src: url('/fonts/montserrat-italic-variable.woff2') format('woff2-variations');
+}
+
+/* ---  Reglas @font-face para Fira Code --- */
+@font-face {
+    font-family: 'Fira Code Variable'; /* Nombre de la familia CSS para Fire Code */
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/fira-code-variable.woff2') format('woff2-variations');
+  }
+
+
 @custom-variant dark (&:is(.dark *));
 
 @theme {
     --font-sans:
-        'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        'Inter Variable', /* ¡Aquí va tu fuente Inter para body! */
+        ui-sans-serif, 
+        system-ui, sans-serif, 
+        'Apple Color Emoji', 
+        'Segoe UI Emoji', 
+        'Segoe UI Symbol', 
+        'Noto Color Emoji';
+
+    --font-heading: /* ¡Nueva variable para tus títulos! */
+        'Montserrat Variable',
+        ui-sans-serif,
+        system-ui,
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji';
+
+    --font-mono: /* Opcional: para fuentes monoespaciadas, si usas una como Fira Code */
+        'Fira Code variable',
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        "Liberation Mono",
+        "Courier New",
+        monospace;
 
     --radius-lg: var(--radius);
     --radius-md: calc(var(--radius) - 2px);
